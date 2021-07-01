@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import { Col, Input, Label, ModalBody, Row, Modal } from 'reactstrap';
 import Images from '../../../assets/images'
