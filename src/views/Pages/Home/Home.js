@@ -131,6 +131,7 @@ class Home extends Component {
               <div className='btn_reset'>Reset</div>
             </Row>
             <Row style={{ marginTop: 40 }}>
+
               <Tabs defaultActiveKey="1">
                 <TabPane tab="All" key="1">
                   <div style={{ display: 'flex', marginBottom: 10 }}>
