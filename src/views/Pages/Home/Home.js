@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, Label, ModalBody, InputGroup, InputGroupAddon, InputGroupText, Row, Modal } from 'reactstrap';
+import { Col, Input, Label, ModalBody, Row, Modal } from 'reactstrap';
 import Images from '../../../assets/images'
 import { Tabs } from 'antd';
 import StarRatings from 'react-star-ratings';
