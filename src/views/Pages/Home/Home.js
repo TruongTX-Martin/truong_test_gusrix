@@ -19,12 +19,9 @@ class Home extends Component {
   }
 
   getClassConditionStar(currentIndex, index, total) {
-    if (currentIndex == index) {
-      console.log('currentIndex:', currentIndex);
-      console.log('index:', index);
-      console.log('total:', total);
+    if (currentIndex === index) {
       // current Index = 0 -> border color, border-radius-top-left, boder-radius-bottom-left
-      if (currentIndex == 0) {
+      if (currentIndex === 0) {
         return 'div_star div_star_selected_0';
       } else if (currentIndex > 0 && currentIndex < total - 1) {
         return 'div_star div_star_selected_center';
@@ -32,14 +29,14 @@ class Home extends Component {
         return 'div_star div_star_selected_last'
       }
     } else if (index > currentIndex) {
-      if (index == total - 1) {
+      if (index === total - 1) {
         return 'div_star div_star_unselect_last';
       } else {
         return 'div_star div_star_unselect_right';
       }
     } else {
       //index < current index
-      if (index == 0) {
+      if (index === 0) {
         return 'div_star div_star_unselect_0';
       } else {
         return 'div_star div_star_unselect_left';
