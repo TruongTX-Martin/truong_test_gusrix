@@ -94,7 +94,7 @@ jobs:
           name: Upload to AWS S3
           command: |
             echo "Start build admin"
-            aws s3 sync --delete build/ s3://truong-test/
+            aws s3 sync --delete build/ s3://truong-test
             echo "Ended build admin"
             
             
