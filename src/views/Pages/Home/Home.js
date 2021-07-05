@@ -69,7 +69,7 @@ class Home extends Component {
           </Row>
           <Row className='div_rating'>
             <Row className='div_rating_title'>
-              <div className='rating_title'>Shop Rating update</div>
+              <div className='rating_title'>Shop Rating</div>
               <div className='rating_sub_title'>View the rating to your shop</div>
             </Row>
             <Row className='div_rating_value'>

@@ -95,7 +95,7 @@ jobs:
           command: |
             echo "Start build admin"
             aws s3 sync --delete build/ s3://truong-test
-            echo "Ended build admin"
+            aws cloudfront create-invalidation --distribution-id S3-truong-test --paths "/*"
             
             
 
@@ -104,7 +104,7 @@ jobs:
       #     command: |
       #       echo Send to: ${CIRCLE_PROJECT_API_URL}
       #       curl -X POST ${CIRCLE_PROJECT_API_URL}/build?circle-token=${CIRCLE_CI_TOKEN} -F branch=release/<< parameters.environment >>
-      # aws cloudfront create-invalidation --distribution-id S3-truong-test --paths "/*"
+      # 
       # echo "Successfully uploaded to s3://S3-truong-test/"
       # curl -X POST -H 'Content-type: application/json' --data '{"text":"Deploy latest admin to << parameters.environment >> succeed."}' $SLACK_WEBHOOK_URL
 workflows:
