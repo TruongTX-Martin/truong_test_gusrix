@@ -95,6 +95,7 @@ jobs:
           command: |
             echo "Start build admin"
             aws s3 sync --delete build/ s3://truong-test
+            echo "Start create invalidation"
             aws cloudfront create-invalidation --distribution-id S3-truong-test --paths "/*"
             
             
