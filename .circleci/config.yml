@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@0.1.19
+  slack: circleci/slack@3.4.2
 # jobs:
 #   build:
 #     docker:
@@ -92,15 +93,20 @@ jobs:
       - run:
           name: Upload to AWS S3
           command: |
+            echo "Start build admin"
             aws s3 sync --delete build/ s3://truong-test/
-            aws cloudfront create-invalidation --distribution-id S3-truong-test --paths "/*"
+            echo "Ended build admin"
+            
+            
 
       # - run:
       #     name: Send API trigger
       #     command: |
       #       echo Send to: ${CIRCLE_PROJECT_API_URL}
       #       curl -X POST ${CIRCLE_PROJECT_API_URL}/build?circle-token=${CIRCLE_CI_TOKEN} -F branch=release/<< parameters.environment >>
-  
+      # aws cloudfront create-invalidation --distribution-id S3-truong-test --paths "/*"
+      # echo "Successfully uploaded to s3://S3-truong-test/"
+      # curl -X POST -H 'Content-type: application/json' --data '{"text":"Deploy latest admin to << parameters.environment >> succeed."}' $SLACK_WEBHOOK_URL
 workflows:
   version: 2
   deploy_admin-dev:
